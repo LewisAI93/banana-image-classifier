@@ -10,7 +10,7 @@ def get_args():
     parser.add_argument('--image_size', type=int, default=512)
    
     
-    parser.add_argument('--csv_dir', type=str, default='data/CSVs')
+    parser.add_argument('--csv_dir', type=str, default='object_detection/data/CSVs')
     parser.add_argument('--out_dir', type=str, default='./sessions')
 
     parser.add_argument('--batch_size', type=int, default=8, choices=[8,16,32,64])

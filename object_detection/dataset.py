@@ -17,7 +17,7 @@ class ObjDetectionDataset(torch.utils.data.Dataset):
         args = get_args()
         row = self.df.iloc[idx]
 
-        image_path = str(row["images"])
+        image_path = os.path.join("object_detection", str(row["images"]))
         img = Image.open(image_path).convert("RGB")
 
         w, h = img.size
@@ -25,7 +25,7 @@ class ObjDetectionDataset(torch.utils.data.Dataset):
         image = to_tensor(img)
 
         boxes, labels = [], []
-        label_path = str(row["labels"])
+        label_path = os.path.join("object_detection", str(row["labels"]))
         with open(label_path) as f:
             for line in f:
                 cls, xc, yc, bw, bh = map(float, line.split())
