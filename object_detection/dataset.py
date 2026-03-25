@@ -1,5 +1,5 @@
 import torch
-from PIL import Image
+from PIL import Image, ImageOps
 from torchvision.transforms.functional import to_tensor
 import os
 from args import get_args
@@ -19,6 +19,7 @@ class ObjDetectionDataset(torch.utils.data.Dataset):
 
         image_path = os.path.join("object_detection", str(row["images"]))
         img = Image.open(image_path).convert("RGB")
+        img = ImageOps.exif_transpose(img)
 
         w, h = img.size
         img = img.resize((args.image_size, args.image_size))
