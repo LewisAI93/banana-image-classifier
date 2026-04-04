@@ -55,7 +55,7 @@ def train_model(model, train_loader, val_loader, device):
 
     run_dir = get_new_run_dir(args.plot_out_dir)
 
-    config = vars(args).copy()  # argparse.Namespace -> dict
+    config = vars(args).copy()
     config["run_dir"] = run_dir
     config["start_time"] = datetime.now().isoformat(timespec="seconds")
 
@@ -123,7 +123,6 @@ def train_model(model, train_loader, val_loader, device):
             )
             break
 
-    # after training (stopped early or reached max epochs): plot and save
     epochs = range(1, len(train_losses) + 1)
 
     plt.figure(figsize=(9, 5))
