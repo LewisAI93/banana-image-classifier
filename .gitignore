@@ -218,8 +218,11 @@ __marimo__/
 # object_detection/data/images
 object_detection/data/images/*.jpg
 object_detection/data/images/*.png
-object_detections/data/images/*.jpeg
+object_detection/data/images/*.jpeg
+plots/
+sessions/
+inference_outputs/
 
-plot_loss.py
+inference.py
 gpu_test.py
 data_preperation.py
