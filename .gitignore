@@ -221,8 +221,7 @@ object_detection/data/images/*.png
 object_detection/data/images/*.jpeg
 plots/
 sessions/
-inference_outputs/
+object_detection/data/test_images
 
-inference.py
 gpu_test.py
 data_preperation.py
